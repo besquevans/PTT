@@ -22,6 +22,20 @@ class BoardsController < ApplicationController
     end
   end
 
+  def edit
+    @board = Board.find(params[:id])
+  end
+
+  def update
+    @board = Board.find(params[:id])
+
+    if @board.update(board_params)
+      redirect_to boards_path, notice: "更新成功"
+    else
+      render :edit, notice: "error"
+    end
+  end
+
   private
   def board_params
     #strong parameters
