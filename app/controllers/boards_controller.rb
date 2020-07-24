@@ -4,10 +4,21 @@ class BoardsController < ApplicationController
   end
 
   def new
-    
+    @board = Board.new
   end
 
   def create
-    render html: params
+    @board = Board.new(board_params)
+
+    if @board.save 
+      redirect_to root_path, notice: "新增成功！！"
+    else
+    end
+  end
+
+  private
+  def board_params
+    #strong parameters
+    params.require(:board).permit(:title, :intro)
   end
 end
