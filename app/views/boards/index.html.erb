@@ -5,7 +5,7 @@
 <ul>
   <% @boards.each do |board| %>
   <li>
-    <%= board.title %>
+    <%= link_to board.title, board_path(board) %>
   </li>
   <% end %>
 </ul>
