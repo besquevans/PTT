@@ -2,12 +2,25 @@
 
 <%= link_to "新增看板", new_board_path %>
 
+<table>
+  <thead>
+    <th>版名</th>
+    <th>link</th>
+  </thead>
+  <tbody>
+    <% @boards.each do |board| %>
+    <tr>
+      <td>
+        <%= link_to board.title, board_path(board) %>
+      </td>
+      <td>
+        <%= link_to "編輯", edit_board_path(board) %>
+        <%= link_to "刪除", board_path(board), method: :delete, data: {confirm: "確認刪除？"} %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
 <ul>
-  <% @boards.each do |board| %>
-    <li>
-      <%= link_to board.title, board_path(board) %>
-      <%= link_to "編輯", edit_board_path(board) %>
-      <%= link_to "刪除", board_path(board), method: :delete, data: {confirm: "確認刪除？"} %>
-    </li>
-  <% end %>
+  
 </ul>
