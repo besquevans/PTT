@@ -1,0 +1,17 @@
+<% if post.errors.any? %>
+  <ul>
+    <% post.errors.full_messages.each do |msg| %>
+      <%= msg %>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_with(model: post, url: board_posts_path) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :content %>
+  <%= f.text_area :content %>
+
+  <%= f.submit "Create Post" %>
+<% end %>
