@@ -1,6 +1,14 @@
-<h1>看板</h1>
-
-<h3><%= @board.title %></h3>
-<h3><%= @board.intro %></h3>
+<h1>看板 <%= @board.title %></h1>
+<h3>Intro:<%= @board.intro %></h3>
 
 <%= link_to "new Post", new_board_post_path(@board) %>
+
+<ul>
+  <% @posts.each do |post| %>
+    <li>
+      <%= link_to post.title, post_path(post) %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Board Index", boards_path %>
