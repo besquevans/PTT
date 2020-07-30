@@ -6,12 +6,18 @@
   </ul>
 <% end %>
 
-<%= form_with(model: post, url: board_posts_path) do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+<%= form_with(model: post, url: board_posts_path, local: true) do |f| %>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
 
-  <%= f.label :content %>
-  <%= f.text_area :content %>
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </div>
 
-  <%= f.submit "Create Post" %>
+  <div class="field">
+    <%= f.submit "Create Post" %> 
+  </div>
 <% end %>

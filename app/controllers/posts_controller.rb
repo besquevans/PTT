@@ -1,30 +1,28 @@
 class PostsController < ApplicationController
-  def index
-  
-  end
-  
+  before_action :find_board, only: [:show, :new, :create]
+
   def new
-    @board = Board.find(params[:board_id])
     @post = @board.posts.new
   end
   
   def create
-  
+    @post = @board.posts.new(post_params)
+
+    if @post.save
+      redirect_to @board, notice: '文章新增成功'
+    else
+      render :new
+    end
   end
   
-  def edit
+
+  private 
   
+  def post_params
+    params.require(:post).permit(:title, :content)
   end
-  
-  def update
-  
-  end
-  
-  def show
-  
-  end
-  
-  def destroy
-  
+
+  def find_board
+    @board = Board.find(params[:board_id])
   end
 end
