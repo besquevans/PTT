@@ -1,8 +1,6 @@
 class Board < ApplicationRecord
+  acts_as_paranoid
   validates :title, presence: true
-  validates :intro, presence: true
 
-  def destroy
-    self.update(deleted_at: Time.now)
-  end
+  has_many :posts
 end
