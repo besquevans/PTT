@@ -1,6 +1,24 @@
 class Post < ApplicationRecord
   acts_as_paranoid
-  belongs_to :board
 
   validates :title, presence: true
+  validates :serial, uniqueness: true
+
+  belongs_to :board
+
+  before_create :create_serial
+  #只有新增資料時執行
+
+  
+  private 
+
+  def create_serial
+    self.serial = serial_generator(10)
+  end
+
+  def serial_generator(n)
+    list = [*'A'..'Z', *'a'..'z', *0..9]
+    list -= ['i','l','I',1,0,'o']
+    list.sample(n).join
+  end
 end
