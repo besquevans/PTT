@@ -3,7 +3,7 @@ class BoardsController < ApplicationController
   before_action :find_board, only: [:show, :edit, :update, :destroy]
   
   def index
-    @boards = Board.where(deleted_at: nil)
+    @boards = Board.all
   end
 
   def show
