@@ -1,10 +1,14 @@
 class PostsController < ApplicationController
-  before_action :find_board, only: [:show, :new, :create]
+  before_action :find_board, only: [:new, :create]
+    
+  def show 
+    @post = Post.find(params[:id])
+  end
 
   def new
     @post = @board.posts.new
   end
-  
+
   def create
     @post = @board.posts.new(post_params)
 
