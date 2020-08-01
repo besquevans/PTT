@@ -1,0 +1,22 @@
+<% if flash[:notice] %>
+  <div class="alert alert-primary alert-dismissible" role="alert">
+    <%= notice %>
+
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<% end %>
+
+<div class="header d-flex justify-content-between px-2">
+  <span>
+    主功能表
+  </span>
+  <span class="title">
+    批踢踢實業坊
+  </span>
+  <span>
+    看板 
+    <%= "<< Soft Job>>" %>
+  </span>
+</div>

@@ -1,1 +1,48 @@
-<h1>hello world!</h1>
+<div class="leave_message px-2">
+  <div class="page-pic py-3">
+    <img src="https://picsum.photos/1200/200/?random=1" class="w-100">
+  </div>
+
+  <p class="content">
+    <span>
+      辦公室是啊，走勢當初消費對此都是國語引進描述，女兒徹底呵呵。
+    </span>
+  </p>
+
+  <p class="warning d-flex text-center align-items-center">
+    上方為使用者心情點播留言區，不代表本站立場
+  </p>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-9 col-md-6 mx-auto">
+      <div class="link-group">
+        <% @homepage_links.each do |link| %>
+          <div class="link d-flex">
+            <%= link_to boards_path, class: "w-100 d-flex justify-content-between" do %>
+              <span>
+                (
+                <span class="title-first">
+                  <%= link[0].to_s.split('').shift.capitalize %>
+                </span>
+                <span>
+                  <%= " ) #{link[0]}" %>
+                </span>
+              </span>
+  
+              <span>
+                <%= "【 #{link[1]} 】" %>
+              </span>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+
+

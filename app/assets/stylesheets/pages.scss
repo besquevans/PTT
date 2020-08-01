@@ -1,0 +1,25 @@
+.leave_message{
+  .content{
+    span{
+      background-color: green;
+      color: yellow;
+    }
+  }
+
+  .warning:before,
+  .warning:after{
+    content: '';
+    display: block;
+    background-color: #eee;
+    height: 2px;
+    flex-grow: 1;
+  }
+}
+
+.link-group{
+  .link{
+    .title-first{
+      color: #aff;
+    }
+  }
+}

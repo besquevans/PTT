@@ -18,7 +18,7 @@ class BoardsController < ApplicationController
     @board = Board.new(board_params)
 
     if @board.save 
-      redirect_to root_path, notice: "新增成功！！"
+      redirect_to boards_path, notice: "新增成功！！"
     else
       render :new, notice: "errror"
     end
