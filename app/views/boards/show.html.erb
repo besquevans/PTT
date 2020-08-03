@@ -1,6 +1,10 @@
 <h1>看板 <%= @board.title %></h1>
 <h3>Intro:<%= @board.intro %></h3>
 
+<p>
+  [ 版主：<%= display_bm(@board) %> ]
+</p>
+
 <%= link_to "new Post", new_board_post_path(@board) %>
 
 <ul>
