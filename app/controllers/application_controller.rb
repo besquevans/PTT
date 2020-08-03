@@ -16,4 +16,8 @@ class ApplicationController < ActionController::Base
   def user_sign_in?
     current_user != nil
   end 
+
+  def authenticate_user!
+    redirect_to root_path, notice: "請登入會員" if not user_sign_in?
+  end
 end
