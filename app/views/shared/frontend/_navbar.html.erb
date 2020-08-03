@@ -1,0 +1,28 @@
+<div class="header d-flex justify-content-between px-2">
+  <span>
+    主功能表
+  </span>
+  <span class="title">
+    批踢踢實業坊
+  </span>
+  <span>
+    <nav>
+      <ul>
+        <% if session[:user_token]  %>
+        <li>
+          <%= @current_user.account %>
+        </li>  
+        <li>
+            <%= '登出' %>
+          </li>
+        <% else %>
+          <li>
+            <%= '登入' %>
+          </li>
+          <li>
+            <%= '註冊' %>
+          </li>
+        <% end %>
+      </ul>
+    </nav>
+</div>
