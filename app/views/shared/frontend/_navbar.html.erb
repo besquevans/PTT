@@ -8,12 +8,12 @@
   <span>
     <nav>
       <ul>
-        <% if session[:user_token]  %>
+        <% if current_user  %>
         <li>
-          <%= @current_user.account %>
+          <%= current_user.account %>
         </li>  
         <li>
-            <%= '登出' %>
+            <%= link_to '登出', sign_out_users_path, method: :delete %>
           </li>
         <% else %>
           <li>
