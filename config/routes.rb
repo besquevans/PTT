@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       get :edit
       patch :update
       get :sign_in 
+      post :login
       delete :sign_out
     end
   end

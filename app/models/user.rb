@@ -7,9 +7,7 @@ class User < ApplicationRecord
   def self.login(options)
     if options[:account] && options[:password]
       find_by(account: options[:account], 
-              password: bigbang(Digest::SHA1.hexdigest("x#{options[:password]}y")))
-    else
-      return false
+              password: Digest::SHA1.hexdigest("x#{options[:password]}y"))
     end
   end
 
