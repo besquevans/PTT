@@ -17,10 +17,10 @@
           </li>
         <% else %>
           <li>
-            <%= '登入' %>
+            <%= link_to '登入', sign_in_users_path %>
           </li>
           <li>
-            <%= '註冊' %>
+            <%= link_to '註冊', sign_up_users_path %>
           </li>
         <% end %>
       </ul>

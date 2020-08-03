@@ -17,9 +17,9 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-9 col-md-6 mx-auto">
+    <div class="col-9 col-md-5 mx-auto">
       <div class="link-group">
-        <% @homepage_links.each do |link| %>
+        <% homepage_list.each do |link| %>
           <div class="link d-flex">
             <%= link_to boards_path, class: "w-100 d-flex justify-content-between" do %>
               <span>
