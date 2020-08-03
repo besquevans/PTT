@@ -34,6 +34,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'hirb-unicode', '~> 0.0.5'
   gem 'rspec-rails', '~> 4.0', '>= 4.0.1'
+  gem 'rack-mini-profiler', '~> 2.0', '>= 2.0.3'
 end
 
 group :development do
