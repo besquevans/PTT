@@ -2,11 +2,16 @@ body{
   background-color: #000;
 }
 
-*, div, p, span, a {
-  background-color: #000;
+
+*{
   color: #eee;
   margin: 0;
   padding: 0;
+}
+
+.btn {
+  background-color: #eee;
+  color: #222;
 }
 
 .header{

@@ -1,17 +1,26 @@
-<h1>Sign up</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-9 col-md-6 mx-auto text-center">
+      <h1>Sign up</h1>
 
-<%= form_for @user do |f| %>
-  <%= f.label :account %>
-  <%= f.text_field :account %>
+      <%= form_for @user do |f| %>
+        <div class="fields">
+          <%= f.label :account %>
+          <%= f.text_field :account %>
+        </div>
 
-  <%= f.label :email %>
-  <%= f.text_field :email %>
+        <div class="fields">
+          <%= f.label :password %>
+          <%= f.password_field :password %>
+        </div>
 
-  <%= f.label :password %>
-  <%= f.text_field :password %>
+        <div class="fields">
+          <%= f.label :email %>
+          <%= f.email_field :email %>
+        </div>
 
-  <%= f.label :password_confirmation %>
-  <%= f.text_field :password_confirmation %>
-
-  <%= f.submit "Sign up" %>
-<% end %>
+        <%= f.submit "Sign up", class: "btn" %>
+      <% end %>
+    </div>
+  </div>
+</div>
