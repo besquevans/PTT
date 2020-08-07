@@ -1,5 +1,8 @@
-<h1>看板 <%= @board.title %></h1>
-<h3>Intro:<%= @board.intro %></h3>
+<h1>
+看板 <%= @board.title %>
+<small><%= link_to  "我的最愛" %></small>
+</h1>
+
 
 <p>
   [ 版主：<%= display_bm(@board) %> ]

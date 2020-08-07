@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get '/index', to: "pages#index"
   get '/about', to: "pages#about"
 
+  resources :favorites, except: [:show, :edit]
+
   resources :boards do 
     resources :posts, only: [:index, :new, :create]
   end
