@@ -1,6 +1,6 @@
 <h1>
 看板 <%= @board.title %>
-<small><%= link_to  "我的最愛" %></small>
+<small><%= link_to  "我的最愛", favorite_board_path(@board), method: :post %></small>
 </h1>
 
 
