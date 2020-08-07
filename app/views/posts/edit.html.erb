@@ -1,0 +1,25 @@
+<h1>編輯文章</h1>
+
+<% if @post.errors.any? %>
+  <ul>
+    <% @post.errors.full_messages.each do |msg| %>
+      <%= msg %>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_with(model: @post, local: true) do |f| %>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </div>
+
+  <div class="field">
+    <%= f.submit "Create Post" %> 
+  </div>
+<% end %>
