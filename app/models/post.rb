@@ -6,11 +6,18 @@ class Post < ApplicationRecord
 
   belongs_to :board
   belongs_to :user 
-  
+
   before_create :create_serial
   #只有新增資料時執行
 
-  
+  def display_username
+    if user.nil? 
+      "-"
+    else
+      user.account
+    end
+  end
+
   private 
 
   def create_serial

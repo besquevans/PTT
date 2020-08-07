@@ -10,6 +10,7 @@
 <ul>
   <% @posts.each do |post| %>
     <li>
+      <%= post.display_username %>
       <%= link_to post.title, post_path(post) %>
       <%= link_to  "編輯", edit_post_path(post) %>
     </li>
