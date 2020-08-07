@@ -1,2 +1,19 @@
-<h1>Post show</h1>
+<ul>
+  <li>
+    <span>作者</span>
+    <span><%= @post.user.account %></span>
+  </li>
+  <li>
+    <span>標題</span>
+    <span><%= @post.title %></span>
+  </li>
+  <li>
+    <span>時間</span>
+    <span><%= @post.created_at %></span>
+  </li>
+</ul>
 
+
+<p>
+  <%= @post.content %>
+</p>
