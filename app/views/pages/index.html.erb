@@ -14,14 +14,20 @@
   </p>
 </div>
 
-
 <div class="container">
   <div class="row">
     <div class="col-9 col-md-5 mx-auto">
       <div class="link-group">
         <%= render "link", name: "announce", link: "boards" %>
-        <%= render "link", name: "favorites", link: "favorites" %>
+        <%= render "link", name: "favorites", link: favorites_path %>
         <%= render "link", name: "class", link: "boards" %>
+        <%= render "link", name: "mail", link: "boards" %>
+        <%= render "link", name: "talk", link: "boards" %>
+        <%= render "link", name: "user", link: "boards" %>
+        <%= render "link", name: "xyz", link: "boards" %>
+        <%= render "link", name: "play", link: "boards" %>
+        <%= render "link", name: "namelist", link: "boards" %>
+        <%= render "link", name: "goodbye", link: sign_out_users_path %>
       </div>
     </div>
   </div>
