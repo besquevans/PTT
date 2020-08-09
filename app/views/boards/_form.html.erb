@@ -7,11 +7,16 @@
 <% end %>
 
 <%= form_for(board) do |f| %> 
-  <%= f.label :title, "看板名稱" %>
-  <%= f.text_field :title %> 
-  <%= f.label :intro, "看板說明" %> 
-  <%= f.text_area:intro%> 
+  <div class="form-group">
+    <%= f.label :title, "看板名稱" %>
+    <%= f.text_field :title, class: "form-control" %> 
+  </div>
 
-  <%= f.submit "送出" %> 
+  <div class="form-group">
+    <%= f.label :intro, "看板說明" %> 
+    <%= f.text_area:intro, class: "form-control" %> 
+  </div>
+
+  <%= f.submit "送出", class: "btn btn-primary" %> 
 <% end %>
 
