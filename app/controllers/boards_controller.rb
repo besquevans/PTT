@@ -20,7 +20,7 @@ class BoardsController < ApplicationController
   end
 
   def create
-    @board = Board.new(board_params)
+    @board = current_user.boards.create(board_params)
 
     if @board.save 
       redirect_to boards_path, notice: "新增成功！！"
