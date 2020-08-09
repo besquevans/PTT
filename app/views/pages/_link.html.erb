@@ -1,0 +1,10 @@
+<div class="link d-flex">
+  <%= link_to link, class: "w-100 d-flex justify-content-between" do %>
+    <span>
+      <%= name.capitalize.insert(0, "(").insert(2, ")")  %>
+    </span>
+    <span>
+      <%= t("pages.#{name}") %>
+    </span>
+  <% end %>
+</div>

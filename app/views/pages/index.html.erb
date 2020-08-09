@@ -19,25 +19,9 @@
   <div class="row">
     <div class="col-9 col-md-5 mx-auto">
       <div class="link-group">
-        <% homepage_list.each do |link| %>
-          <div class="link d-flex">
-            <%= link_to boards_path, class: "w-100 d-flex justify-content-between" do %>
-              <span>
-                (
-                <span class="title-first">
-                  <%= link[0].to_s.split('').shift.capitalize %>
-                </span>
-                <span>
-                  <%= " ) #{link[0]}" %>
-                </span>
-              </span>
-  
-              <span>
-                <%= "【 #{link[1]} 】" %>
-              </span>
-            <% end %>
-          </div>
-        <% end %>
+        <%= render "link", name: "announce", link: "boards" %>
+        <%= render "link", name: "favorites", link: "favorites" %>
+        <%= render "link", name: "class", link: "boards" %>
       </div>
     </div>
   </div>
