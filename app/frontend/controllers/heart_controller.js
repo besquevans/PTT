@@ -19,7 +19,26 @@ export default class extends Controller {
 
   favorite() {
     // console.log(this.heartTarget)
-    this.heartTarget.classList.toggle("far")
-    this.heartTarget.classList.toggle("fas")
+    let board_id = this.data.get("id")
+
+    const csrfToken = document.querySelector("meta[name=csrf-token]").content
+    ax.defaults.headers.common['X-CSRF-Token'] = csrfToken
+
+    ax.post(`/boards/${board_id}/favorite.json`)
+      .then((result) => {
+        // console.log(result)
+        console.log(result.data["status"])
+        if (result.data["status"] == true ) {
+          this.heartTarget.classList.remove("far")
+          this.heartTarget.classList.add("fas")
+        } else {
+          this.heartTarget.classList.remove("far")
+          this.heartTarget.classList.add("fas")
+        }
+      })
+      .catch(function(err){
+        console.log(err)
+      })
+    
   }
 }

@@ -1,4 +1,4 @@
-<h1 data-controller="heart">
+<h1 data-controller="heart" data-heart-id="<%= @board.id %>">
   看板 <%= @board.title %>
   <a data-action="click -> heart#favorite">
     <i class="far fa-heart" data-target="heart.heart"></i>
