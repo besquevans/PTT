@@ -20,17 +20,21 @@
 
 <hr>
 
-<%= form_with(model: @comment, url: post_comments_path(@post)) do |f| %>
-  <%= f.text_field :content %>
+<%= form_with(model: @comment, url: post_comments_path(@post), class: "form-inline") do |f| %>
+  <div class="form-group">
+    <%= f.text_field :content, class: "form-control" %>
+  </div>
 
-  <%= f.submit %>
+  <%= f.submit "送出", class: "btn btn-primary ml-2" %>
 <% end %>
 
 <hr>
 
 <ul>
+  <h3>----All post comments----</h3>
   <% @comments.each do |comment| %>
     <li>
+      <%= comment.user.account %> :
       <%= comment.content %>
     </li>
   <% end %>
