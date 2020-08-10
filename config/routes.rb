@@ -13,7 +13,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :posts, except: [:index, :new, :create]
+  resources :posts, except: [:index, :new, :create] do
+    resources :comments, shallow: true, only: [:create]
+  end
 
   resources :users, only: [:create] do
     collection do 
