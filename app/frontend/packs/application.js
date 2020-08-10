@@ -8,3 +8,4 @@ require("script")
 require("stylesheets")
 
 // require("bootstrap")
+import "controllers"
