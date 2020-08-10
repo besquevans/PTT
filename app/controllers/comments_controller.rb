@@ -5,9 +5,9 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = @post.comments.new(comment_params)
     if @comment.save 
-      redirect_to @post
+      redirect_to @post, notice: "留言成功"
     else
-      redirect_to @post
+      redirect_to @post, notice: "留言失敗"
     end
   end
 
