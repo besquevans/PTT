@@ -17,3 +17,21 @@
 <p>
   <%= @post.content %>
 </p>
+
+<hr>
+
+<%= form_with(model: @comment, url: post_comments_path(@post)) do |f| %>
+  <%= f.text_field :content %>
+
+  <%= f.submit %>
+<% end %>
+
+<hr>
+
+<ul>
+  <% @comments.each do |comment| %>
+    <li>
+      <%= comment.content %>
+    </li>
+  <% end %>
+</ul>
