@@ -12,7 +12,12 @@ class BoardsController < ApplicationController
   
   def favorite 
     current_user.toggle_favorite_board(@board)
-    redirect_to favorites_path, notice: "更新我的最愛成功!"
+
+    respond_to do |format|
+      format.html { redirect_to favorites_path, notice: "更新我的最愛成功!" }
+      format.json { render json: { status: @board.favorited_by?(current_user) } }
+    end
+    
   end
 
   def new

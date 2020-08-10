@@ -8,4 +8,8 @@ class Board < ApplicationRecord
 
   has_many :favorite_boards 
   has_many :favorited_users, through: :favorite_boards, source: :user
+
+  def favorited_by?(user)
+    favorited_users.include?(user)
+  end
 end
