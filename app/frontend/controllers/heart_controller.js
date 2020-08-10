@@ -8,6 +8,7 @@
 // </div>
 
 import { Controller } from "stimulus"
+import ax from "axios"
 
 export default class extends Controller {
   static targets = [ "heart" ]
