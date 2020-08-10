@@ -1,6 +1,10 @@
-<h1>
-看板 <%= @board.title %>
-<small><%= link_to  "我的最愛", favorite_board_path(@board), method: :post %></small>
+<h1 data-controller="heart">
+  看板 <%= @board.title %>
+  <a data-action="click -> heart#favorite">
+    <i class="far fa-heart" data-target="heart.heart"></i>
+  </a>
+
+  <small><%= link_to  "我的最愛", favorite_board_path(@board), method: :post %></small>
 </h1>
 
 

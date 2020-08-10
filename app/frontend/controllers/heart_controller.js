@@ -10,9 +10,15 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = [ "output" ]
+  static targets = [ "heart" ]
 
-  connect() {
-    this.outputTarget.textContent = 'Hello, Stimulus!'
+  // connect() {
+  //   console.log("hi")
+  // }
+
+  favorite() {
+    // console.log(this.heartTarget)
+    this.heartTarget.classList.toggle("far")
+    this.heartTarget.classList.toggle("fas")
   }
 }
