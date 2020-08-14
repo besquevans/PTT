@@ -4,6 +4,16 @@ Rails.application.routes.draw do
   get '/index', to: "pages#index"
   get '/about', to: "pages#about"
 
+  #API
+  namespace :api do
+    namespace :v2 do
+      resources :boards, only: [:index]
+    end
+  end
+
+
+
+  #Origin
   resources :favorites, only: [:index]
 
   resources :boards do 
