@@ -7,15 +7,20 @@ Rails.application.routes.draw do
   resources :favorites, only: [:index]
 
   resources :boards do 
-    resources :posts, only: [:index, :new, :create]
+    resources :posts, shallow: true do 
+      resources :comments, shallow: true, only: [:create]
+    end
+    
     member do
       post :favorite
     end
   end
 
-  resources :posts, except: [:index, :new, :create] do
-    resources :comments, shallow: true, only: [:create]
-  end
+  # shallow =>
+  # resources :boards do 
+  #   resources :posts, only: [:index, :new, :create]
+  # end
+  # resources :posts, except: [:index, :new, :create]
 
   resources :users, only: [:create] do
     collection do 
