@@ -46,4 +46,18 @@ class ApplicationPolicy
       scope.all
     end
   end
+
+  private
+  #user === current_user
+  def plan_a_user
+    user.role == 'plan_a'
+  end
+
+  def plan_b_user
+    user.role == 'plan_b'
+  end
+
+  def admin
+    user.role == 'admin'
+  end
 end
