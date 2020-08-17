@@ -8,6 +8,12 @@ class BoardPolicy < ApplicationPolicy
   end
 
   def create?
-    plan_a_user || plan_b_user || admin
+    if plan_b_user || admin
+      true
+    elsif plan_a_user
+      user.boards.count < 2
+    else
+      false
+    end
   end
 end

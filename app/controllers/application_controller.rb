@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   private
 
   def not_authorized
-    redirect_to root_path, notice: '權限不足'
+    redirect_to root_path, notice: '權限不足或請付款'
   end
 
   def not_found

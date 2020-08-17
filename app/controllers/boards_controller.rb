@@ -28,6 +28,7 @@ class BoardsController < ApplicationController
 
   def create
     @board = current_user.boards.create(board_params)
+    @board.users << current_user
     authorize @board, :create?
 
     if @board.save
