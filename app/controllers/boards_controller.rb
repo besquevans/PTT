@@ -1,23 +1,24 @@
 class BoardsController < ApplicationController
-  before_action :find_board, only: [:favorite, :show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
-  
+  before_action :find_board, only: %i[favorite show edit update destroy hide]
+  before_action :authenticate_user!, except: %i[index show]
+
   def index
-    @boards = Board.all
+    @boards = Board.normal
   end
 
   def show
     @posts = @board.posts.includes(:user)
   end
-  
-  def favorite 
+
+  def favorite
     current_user.toggle_favorite_board(@board)
 
     respond_to do |format|
-      format.html { redirect_to favorites_path, notice: "更新我的最愛成功!" }
-      format.json { render json: { status: @board.favorited_by?(current_user) } }
+      format.html { redirect_to favorites_path, notice: '更新我的最愛成功!' }
+      format.json do
+        render json: { status: @board.favorited_by?(current_user) }
+      end
     end
-    
   end
 
   def new
@@ -27,30 +28,35 @@ class BoardsController < ApplicationController
   def create
     @board = current_user.boards.create(board_params)
 
-    if @board.save 
-      redirect_to boards_path, notice: "新增成功！！"
+    if @board.save
+      redirect_to boards_path, notice: '新增成功！！'
     else
-      render :new, notice: "errror"
+      render :new, notice: 'errror'
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @board.update(board_params)
-      redirect_to boards_path, notice: "更新成功"
+      redirect_to boards_path, notice: '更新成功'
     else
-      render :edit, notice: "error"
+      render :edit, notice: 'error'
     end
   end
 
   def destroy
-    @board.destroy 
-    redirect_to boards_path, notice: "刪除成功"
+    @board.destroy
+    redirect_to boards_path, notice: '刪除成功'
+  end
+
+  def hide
+    @board.hide! if @board.may_hide?
+    redirect_to boards_path, notice: '看版己隱藏'
   end
 
   private
+
   def find_board
     @board = Board.find(params[:id])
   end
