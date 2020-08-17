@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   get '/index', to: 'pages#index'
   get '/about', to: 'pages#about'
+  get '/pricing', to: 'pages#pricing'
+  get '/payment', to: 'pages#payment'
 
   #API
   namespace :api do
