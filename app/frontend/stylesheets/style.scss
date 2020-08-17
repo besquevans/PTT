@@ -1,9 +1,8 @@
-body{
+body {
   background-color: #000;
 }
 
-
-*{
+* {
   color: #eee;
   margin: 0;
   padding: 0;
@@ -14,12 +13,20 @@ body{
   color: #222;
 }
 
-.header{
+.header {
   background-color: blue;
-  span{
+  span {
     background-color: blue;
   }
-  .title{
+  .title {
     color: yellow;
+  }
+}
+
+nav.pagination {
+  span {
+    border: 1px white solid;
+    padding: 2px;
+    margin-right: 2px;
   }
 }
