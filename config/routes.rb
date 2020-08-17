@@ -1,43 +1,42 @@
 Rails.application.routes.draw do
-  root "pages#index"
+  root 'pages#index'
 
-  get '/index', to: "pages#index"
-  get '/about', to: "pages#about"
+  get '/index', to: 'pages#index'
+  get '/about', to: 'pages#about'
 
   #API
   namespace :api do
     namespace :v2 do
-      resources :boards, only: [:index]
+      resources :boards, only: %i[index]
     end
   end
 
-
-
   #Origin
-  resources :favorites, only: [:index]
+  resources :favorites, only: %i[index]
 
-  resources :boards do 
-    resources :posts, shallow: true do 
-      resources :comments, shallow: true, only: [:create]
+  resources :boards do
+    resources :posts, shallow: true do
+      resources :comments, shallow: true, only: %i[create]
     end
-    
+
     member do
       post :favorite
+      put :hide
     end
   end
 
   # shallow =>
-  # resources :boards do 
+  # resources :boards do
   #   resources :posts, only: [:index, :new, :create]
   # end
   # resources :posts, except: [:index, :new, :create]
 
-  resources :users, only: [:create] do
-    collection do 
+  resources :users, only: %i[create] do
+    collection do
       get :sign_up
       get :edit
       patch :update
-      get :sign_in 
+      get :sign_in
       post :login
       delete :sign_out
     end
