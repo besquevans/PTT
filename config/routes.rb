@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/about', to: 'pages#about'
   get '/pricing', to: 'pages#pricing'
   get '/payment', to: 'pages#payment'
+  post '/checkout', to: 'pages#checkout'
 
   #API
   namespace :api do
