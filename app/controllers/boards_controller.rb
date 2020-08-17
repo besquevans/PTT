@@ -58,7 +58,7 @@ class BoardsController < ApplicationController
   private
 
   def find_board
-    @board = Board.find(params[:id])
+    @board = Board.normal.find(params[:id])
   end
 
   def board_params
