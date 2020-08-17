@@ -32,6 +32,7 @@ gem 'rails-i18n', '~> 6.0'
 gem 'aasm', '~> 5.1', '>= 5.1.1' #狀態機
 gem 'kaminari', '~> 1.2', '>= 1.2.1'  #分頁
 gem 'pundit', '~> 2.1' #權限管理
+gem "braintree", "~> 2.102.0" #金流
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
