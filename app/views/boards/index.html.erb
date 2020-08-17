@@ -4,7 +4,9 @@
   <Board></Board>
 </div>
 
-<%= link_to "新增看板", new_board_path %>
+<% if policy(:board).create? %>
+  <%= link_to "新增看版", new_board_path %>
+<% end %>
 
 <table class="table">
   <thead>

@@ -48,7 +48,7 @@ class ApplicationPolicy
   end
 
   private
-  #user === current_user
+
   def plan_a_user
     user.role == 'plan_a'
   end
