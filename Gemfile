@@ -29,7 +29,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'paranoia', '~> 2.4', '>= 2.4.2'
 gem 'rails-i18n', '~> 6.0'
-gem 'aasm', '~> 5.1', '>= 5.1.1'
+gem 'aasm', '~> 5.1', '>= 5.1.1' #狀態機
+gem 'kaminari', '~> 1.2', '>= 1.2.1'  #分頁
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
