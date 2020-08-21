@@ -17,7 +17,7 @@ class PostsController < ApplicationController
 
     if @post.save
       #寄信
-      PostMailer.with(post: @post).poster.deliver_later
+      SendmailJob.set(wait: 10.second).perform_later(@post)
       redirect_to @board, notice: '文章新增成功'
     else
       render :new

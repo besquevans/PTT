@@ -61,7 +61,7 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
 
-  config.action_mailer.delivery_method = :letter_opener_web
+  config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.smtp_settings = {
     address:              'smtp.mailgun.org',
@@ -70,5 +70,6 @@ Rails.application.configure do
     user_name:            'postmaster@sandbox23221135fef044d49d5ca42f03c5d22f.mailgun.org',
     password:             'b51d87ce5f71780e60e39c4d7064d1e3-af6c0cec-ee67636e',
     authentication:       'plain',
-    enable_starttls_auto: true }
+    enable_starttls_auto: true 
+  }
 end
