@@ -18,6 +18,11 @@
   </div>
 
   <div class="form-group">
+    <%= f.label :content %>
+    <%= f.rich_text_area :content, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
     <%= f.label :photo %>
     <%= f.file_field :photo, class: "form-control" %>
   </div>
