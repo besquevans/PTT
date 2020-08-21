@@ -52,6 +52,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'thor', '~> 0.19.1'
   gem 'foreman', '~> 0.82.0'
+  gem 'letter_opener', '~> 1.7'
 end
 
 group :test do
