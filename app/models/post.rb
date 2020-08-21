@@ -7,6 +7,7 @@ class Post < ApplicationRecord
   belongs_to :board
   belongs_to :user 
   has_many :comments
+  has_one_attached :photo
   
   before_create :create_serial
   #只有新增資料時執行

@@ -40,7 +40,7 @@ class PostsController < ApplicationController
   private 
   
   def post_params
-    params.require(:post).permit(:title, :content).merge(user: current_user)
+    params.require(:post).permit(:title, :content, :photo).merge(user: current_user)
   end
 
   def find_board

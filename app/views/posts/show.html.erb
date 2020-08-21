@@ -16,6 +16,8 @@
 
 <p>
   <%= @post.content %>
+  <br>
+  <%= image_tag @post.photo, width: 200 if @post.photo.attached? %>
 </p>
 
 <hr>
