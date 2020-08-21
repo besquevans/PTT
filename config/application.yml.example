@@ -1,8 +1,8 @@
 braintree_merchant_id: '',
 braintree_public_key: '',
 braintree_private_key: ''
-plan_a_price: 5
-plan_b_price: 20
+plan_a_price: "5"
+plan_b_price: "20"
 # Add configuration values here, as shown below.
 #
 # pusher_app_id: "2954"
