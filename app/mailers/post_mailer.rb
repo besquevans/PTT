@@ -1,5 +1,9 @@
 class PostMailer < ApplicationMailer
   def poster 
-    mail(to: 'du20783@gmail.com', subject: 'test')
+    @post = params[:post]
+    mail(
+      to: @post.user.email, 
+      subject: "新增文章: #{@post.title}"
+    )
   end
 end

@@ -16,6 +16,8 @@ class PostsController < ApplicationController
     @post = @board.posts.new(post_params)
 
     if @post.save
+      #寄信
+      PostMailer.with(post: @post).poster.deliver_later
       redirect_to @board, notice: '文章新增成功'
     else
       render :new
