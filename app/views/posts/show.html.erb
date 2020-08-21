@@ -17,7 +17,7 @@
 <p>
   <%= @post.content %>
   <br>
-  <%= image_tag @post.photo, width: 200 if @post.photo.attached? %>
+  <%= image_tag @post.photo.variant(resize_to_limit: [100, 100]) if @post.photo.attached? %>
 </p>
 
 <hr>
